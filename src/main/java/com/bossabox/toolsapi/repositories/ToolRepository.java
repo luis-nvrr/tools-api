@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ToolRepository extends JpaRepository<Tool, Integer> {
 
-  List<Tool> findByTagsContaining(String tag);
+  List<Tool> findByTags(String tag);
 }

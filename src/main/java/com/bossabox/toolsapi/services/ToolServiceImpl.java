@@ -48,7 +48,7 @@ public class ToolServiceImpl implements ToolService {
 
   @Override
   public List<ToolResponse> findToolsByTag(String tag) {
-    List<Tool> toolsContainingTag = this.toolRepository.findByTagsContaining(tag);
+    List<Tool> toolsContainingTag = this.toolRepository.findByTags(tag);
     logger.error("llega a findByTag");
     logger.error(toolsContainingTag.toString());
     List<ToolResponse> toolResponses = toolsContainingTag.stream().map(tool -> createToolResponse(tool)).toList();
